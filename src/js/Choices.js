@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NiceButton from './NiceButton';
 
-const Choices = ({ choices, onSelectAnswer }) => {
+const Choices = ({ choices, allAnswers, onSelectAnswer }) => {
   return (
     <div className="choices">
       {choices.map((choice, index) => (
@@ -12,6 +12,7 @@ const Choices = ({ choices, onSelectAnswer }) => {
           choice={choice}
           index={index}
           onSelectAnswer={onSelectAnswer}
+          allAnswers={allAnswers}
         />
       ))}
     </div>
@@ -21,6 +22,7 @@ const Choices = ({ choices, onSelectAnswer }) => {
 Choices.propTypes = {
   choices: PropTypes.array.isRequired,
   onSelectAnswer: PropTypes.func.isRequired,
+  allAnswers: PropTypes.array.isRequired,
 };
 
 export default Choices;
